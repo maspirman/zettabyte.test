@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Js 1</title>
+</head>
+<body>
+  <p>Check value on inspect element-console</p>
+</body>
+</html>
+
+<script type="text/javascript">
+  const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  var genap = [];
+  var ganjil = [];
+
+  function result(number) {
+
+    for(var i = 0; i < number.length; i++) {
+      console.log(number[i]);
+    }
+
+    for(var i = 0; i < number.length; i++) {
+      if(number[i] %2 == 0) {
+        genap.push(number[i])
+      } else {
+        ganjil.push(number[i])
+
+      }
+    }
+
+  }
+
+  console.log(genap);
+  console.log(ganjil);
+  console.log(result(number));
+</script>

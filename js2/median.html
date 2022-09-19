@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>median js</title>
+</head>
+<body>
+  <p>Check value on inspect element-console</p>
+</body>
+</html>
+<script type="text/javascript">
+  const input = [8, 7, 7, 9, 5, 4, 2, 9];
+
+  function median(numbers) {
+    const sorted = Array.from(numbers).sort((a, b) => a - b);
+    const middle = Math.floor(sorted.length / 2);
+
+    if (sorted.length % 2 === 0) {
+      return (sorted[middle - 1] + sorted[middle]) / 2;
+    }
+
+    return sorted[middle];
+  }
+
+  console.log(median(input));
+</script>

@@ -1,0 +1,54 @@
+<h2>Mentor Listing</h2>
+
+<div class="mat-elevation-z8">
+    <div>
+        <a mat-raised-button color="primary" (click)="Openpopup('')" style="margin: 2%"><fa-icon [icon]="['fas','user-plus']"></fa-icon> Add New </a>
+        <a mat-raised-button color="primary" (click)="Openpopup('')" style="margin: 2%"><fa-icon [icon]="['fas','refresh']"></fa-icon> Reset </a>
+    </div>
+    <table mat-table [dataSource]="finaldata" matSort class="mat-elevation-z8">
+     
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> ID</th>
+          <td mat-cell *matCellDef="let element">{{element.id}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="first_name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Name</th>
+            <td mat-cell *matCellDef="let element">{{element.first_name}} {{element.last_name}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="user_type">
+            <th mat-header-cell *matHeaderCellDef> User Type</th>
+            <td mat-cell *matCellDef="let element">{{element.company.user_type}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="entity">
+            <th mat-header-cell *matHeaderCellDef> Entity</th>
+            <td mat-cell *matCellDef="let element">{{element.company.name}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Status</th>
+            <td mat-cell *matCellDef="let element"><fa-icon [icon]="['fas','check']"></fa-icon></td>
+          </ng-container>
+
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef> Action</th>
+            <td mat-cell *matCellDef="let element">
+                <div>
+                    <a mat-raised-button (click)="EditCompany(element.id)" color="primary"><fa-icon [icon]="['fas','pencil']"></fa-icon></a> |
+                    <a mat-raised-button (click)="Mailto(element.id)" color="primary"><fa-icon [icon]="['fas','envelope']"></fa-icon></a> |
+                    <a mat-raised-button (click)="RemoveCompany(element.id)" color="accent"><fa-icon [icon]="['fas','close']"></fa-icon></a>
+                </div>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayColums"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayColums;"></tr>
+
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+  showFirstLastButtons 
+  aria-label="Select page of periodic elements">
+</mat-paginator>
+</div>

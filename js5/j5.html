@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		const arr1 = [
+		{ min_score: 1, status: "fresher" },
+		{ min_score: 5, status: "junior" },
+		{ min_score: 8, status: "senior" },
+		];
+
+		const arr2 = [
+		{ name: "Susanti", id: "1", score: 4, status_test: "" },
+		{ name: "Mei", id: "2", score: 7, status_test: "" },
+		{ name: "Ros", id: "3", score: 9, status_test: "" },
+		{ name: "Mail", id: "4", score: 2, status_test: "" },
+		];
+
+		function result(arr1, arr2) {
+			const newarr= arr2.filter(function (a){
+				return a >=arr1.min_score[0];
+
+			});
+			console.log(newarr);
+		};
+
+		console.log(result(arr1, arr2));
+	</script>
+
+</body>
+</html>
